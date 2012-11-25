@@ -23,8 +23,8 @@ namespace EntidadesCS
             DataSet dataSet = new DataSet();
 
             //C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\EntidadesCS\ProcuctosCookieDatos.xml
-            dataSet.ReadXmlSchema("./Archivos_XML/ProductosCookieSchema.xml");
-            dataSet.ReadXml("./Archivos_XML/ProductosCookieDatos.xml");
+            dataSet.ReadXmlSchema("./EntidadesCS/Archivos_XML/ProductosCookieSchema.xml");
+            dataSet.ReadXml("./EntidadesCS/Archivos_XML/ProductosCookieDatos.xml");
             
 
             

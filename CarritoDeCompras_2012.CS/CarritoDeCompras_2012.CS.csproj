@@ -62,13 +62,13 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Menues_Borrar.aspx" />
     <None Include="Web References\ProxyWS\CatalogoWS.disco" />
     <None Include="Web References\ProxyWS\CatalogoWS.wsdl" />
     <None Include="Web References\ProxyWS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Menues_Borrar.aspx" />
     <Content Include="Web.sitemap" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -127,10 +127,16 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:6616/CatalogoWS.asmx">
+    <ProjectReference Include="..\EntidadesCS\EntidadesCS.csproj">
+      <Project>{A33C8205-B07D-41A7-9B1B-865C8CF113B7}</Project>
+      <Name>EntidadesCS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:6616/CatalogoWS.asmx%3fop=ObtenerCatalogo">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\ProxyWS\</RelPath>
-      <UpdateFromURL>http://localhost:6616/CatalogoWS.asmx</UpdateFromURL>
+      <UpdateFromURL>http://localhost:6616/CatalogoWS.asmx%3fop=ObtenerCatalogo</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -138,12 +144,6 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>CarritoDeCompras_2012_CS_ProxyWS_CatalogoWS</CachedSettingsPropName>
     </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EntidadesCS\EntidadesCS.csproj">
-      <Project>{A33C8205-B07D-41A7-9B1B-865C8CF113B7}</Project>
-      <Name>EntidadesCS</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -151,11 +151,23 @@ namespace CarritoDeCompras_2012.CS
         
         public CarritoItem GuardarPosicion(int posicion, string valor, string cantidad, string[] array_NombreProducto,string[]  array_Precio){
             CarritoItem cI = new CarritoItem();
-            cI.idProducto = int.Parse(valor);
-            cI.Cantidad = int.Parse(cantidad);
-            cI.NombreProducto = array_NombreProducto[posicion];
-            cI.PrecioUnitario = int.Parse(array_Precio[posicion]);
+
+            int id = int.Parse(valor);
+            if (id > 0)
+            {
+                cI.idProducto = id;
+                int cant = int.Parse(cantidad);
+                cI.Cantidad = cant;
+                cI.NombreProducto = array_NombreProducto[posicion];
+                //precio_ = precio_.Replace("||", "|");
+                Double conv = Double.Parse(array_Precio[posicion].ToString());
+                conv = conv * cant;
+                cI.PrecioUnitario = int.Parse(conv.ToString()); //int.Parse(conv)
+                
+            }
+
             return cI;
+
         }
 
 
@@ -165,21 +177,9 @@ namespace CarritoDeCompras_2012.CS
 
         public List<CarritoItem> ParsearCookieYGenerar(string s2)
         {
-            // valores distintos   
-            // s2 = "I=|3|2|1|&C=|1|1|1&N=|Aniseed Syrup|Chang|Chai|&P=|10,0000|19,0000|18,0000|$";
-            //valores iguales, para prueba
-            // s2 = "I=|3|1|1|&C=|1|1|1&N=|Aniseed Syrup|Chang|Chai|&P=|10,0000|19,0000|18,0000|$";
-            //int size = s2.IndexOf('$', 1); //ojo si elimino el ultimo caracter flag reeemplazar por int size = s2.Length;
-            //int finaldatos = size - 1;
+
             CarritoItem cI = new CarritoItem();
             List<CarritoItem> ListCarrito = new List<CarritoItem>();
-            //inicializo ???
-            //cI.idProducto = 0;
-            //cI.Cantidad = 0;
-            //cI.NombreProducto = "";
-            //cI.PrecioUnitario = 0;
-            
-            //ListCarrito.Add(cI);
 
             int size = s2.Length;
             int finaldatos = size - 2; //asi quito el caracter de escape y el pipe
@@ -203,32 +203,8 @@ namespace CarritoDeCompras_2012.CS
             string[] array_Precio = Precio.Split('|');
 
 
-            //para debug...
-            //foreach (string a in array_id)
-            //{
-            //    ListItem l = new ListItem(a, a);
-            //    ListBox1.Items.Add(l);
-            //}
+ 
 
-            //foreach (string a in array_cantidad)
-            //{
-            //    ListItem l = new ListItem(a, a);
-            //    ListBox2.Items.Add(l);
-            //}
-
-
-            //foreach (string a in array_NombreProducto)
-            //{
-            //    ListItem l = new ListItem(a, a);
-            //    ListBox3.Items.Add(l);
-            //}
-
-
-            //foreach (string a in array_Precio)
-            //{
-            //    ListItem l = new ListItem(a, a);
-            //    ListBox4.Items.Add(l);
-            //}
             int cantidadDeColumnas = 2;
 
             int[,] resultado_final = DevolverCuantasVeces(array_id, cantidadDeColumnas);
@@ -254,8 +230,11 @@ namespace CarritoDeCompras_2012.CS
                         //opcion1, puedo obtener la posicion del valor en el array principal, 
                         //y moverme con esos valores en los otros arrays para recuperar los valores a guardar
                         int posicion = CuantasVeces(db.ToString(), array_id, true);
-                        cI=GuardarPosicion(posicion, db.ToString(), da.ToString(), array_NombreProducto, array_Precio);
-                        ListCarrito.Add(cI);
+                        if (int.Parse(db.ToString()) > 0)
+                        {
+                            cI = GuardarPosicion(posicion, db.ToString(), da.ToString(), array_NombreProducto, array_Precio);
+                            ListCarrito.Add(cI);
+                        }
                     }
                 }
 

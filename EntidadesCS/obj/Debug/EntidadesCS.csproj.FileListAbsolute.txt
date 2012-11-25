@@ -9,3 +9,8 @@ C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisa
 C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\EntidadesCS\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\EntidadesCS\obj\Debug\EntidadesCS.dll
 C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\EntidadesCS\obj\Debug\EntidadesCS.pdb
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\EntidadesCS\bin\Debug\EntidadesCS.dll
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\EntidadesCS\bin\Debug\EntidadesCS.pdb
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\EntidadesCS\obj\Debug\ResolveAssemblyReference.cache
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\EntidadesCS\obj\Debug\EntidadesCS.dll
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\EntidadesCS\obj\Debug\EntidadesCS.pdb

@@ -17,3 +17,12 @@ C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisa
 C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\ServicioWebCS\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\ServicioWebCS\obj\Debug\ServicioWebCS.dll
 C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\ServicioWebCS\obj\Debug\ServicioWebCS.pdb
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\bin\ServicioWebCS.dll
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\bin\ServicioWebCS.pdb
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\bin\CarritoDeCompras_2012.CS.dll
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\bin\EntidadesCS.dll
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\bin\EntidadesCS.pdb
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\bin\CarritoDeCompras_2012.CS.pdb
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\obj\Debug\ResolveAssemblyReference.cache
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\obj\Debug\ServicioWebCS.dll
+d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\obj\Debug\ServicioWebCS.pdb
