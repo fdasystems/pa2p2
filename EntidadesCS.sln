@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntidadesCS", "EntidadesCS\EntidadesCS.csproj", "{A33C8205-B07D-41A7-9B1B-865C8CF113B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioWebCS", "ServicioWebCS\ServicioWebCS.csproj", "{A6180E5F-F220-4E3C-B57F-D595E1A529FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarritoDeCompras_2012.CS", "CarritoDeCompras_2012.CS\CarritoDeCompras_2012.CS.csproj", "{8618B97E-B3D5-4C1A-B0A2-B70D9703D687}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A33C8205-B07D-41A7-9B1B-865C8CF113B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A33C8205-B07D-41A7-9B1B-865C8CF113B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A33C8205-B07D-41A7-9B1B-865C8CF113B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A33C8205-B07D-41A7-9B1B-865C8CF113B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6180E5F-F220-4E3C-B57F-D595E1A529FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6180E5F-F220-4E3C-B57F-D595E1A529FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6180E5F-F220-4E3C-B57F-D595E1A529FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6180E5F-F220-4E3C-B57F-D595E1A529FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8618B97E-B3D5-4C1A-B0A2-B70D9703D687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8618B97E-B3D5-4C1A-B0A2-B70D9703D687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8618B97E-B3D5-4C1A-B0A2-B70D9703D687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8618B97E-B3D5-4C1A-B0A2-B70D9703D687}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Maestra.master.cs" Inherits="CarritoDeCompras_2012.CS.Maestra" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+   SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        
+    <asp:Table runat="server" ID="tabla1" Width="100%" Height="600px" BorderStyle="Dotted">
+        <asp:TableRow>
+            <asp:TableCell RowSpan="2" runat="server" Height="600px" Width="20%" BorderStyle="Dotted">
+                
+                <asp:ContentPlaceHolder ID="ContentImagen" runat="server"></asp:ContentPlaceHolder>
+                                
+            </asp:TableCell>
+            
+                <asp:TableCell runat="server" ColumnSpan="2" Height="10%" VerticalAlign="Top" 
+                BorderStyle="Dotted">
+                
+                    <asp:Menu runat="server" ID="menu1" DataSourceID="SiteMapDataSource1" >
+                    <DataBindings>
+                                                
+                        <asp:MenuItemBinding DataMember="SiteMapNode" Text="Catalogo" NavigateUrl="~/CatalogoProductos.aspx" />
+                        <asp:MenuItemBinding DataMember="SiteMapNode" Text="Home" NavigateUrl="~/Default.aspx" />
+                        <asp:MenuItemBinding DataMember="SiteMapNode" Text="Carrito" NavigateUrl="~/Carrito.aspx" />
+                    </DataBindings>
+                </asp:Menu>
+                    
+                </asp:TableCell>
+            
+        </asp:TableRow>
+        
+        <asp:TableRow>
+            <asp:TableCell Width="60%" BorderStyle="Dotted"><asp:ContentPlaceHolder ID="ContentBody" runat="server"></asp:ContentPlaceHolder>
+            </asp:TableCell>
+            <asp:TableCell>
+                
+            </asp:TableCell>
+        </asp:TableRow>
+        
+    </asp:Table>
+        
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+
+    </div>
+    </form>
+</body>
+</html>

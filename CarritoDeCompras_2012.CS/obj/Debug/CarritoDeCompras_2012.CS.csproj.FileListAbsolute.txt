@@ -1,0 +1,15 @@
+C:\Documents and Settings\esteban\Mis documentos\Visual Studio 2008\Projects\EntidadesCS\CarritoDeCompras_2012.CS\bin\CarritoDeCompras_2012.CS.dll
+C:\Documents and Settings\esteban\Mis documentos\Visual Studio 2008\Projects\EntidadesCS\CarritoDeCompras_2012.CS\bin\CarritoDeCompras_2012.CS.pdb
+C:\Documents and Settings\esteban\Mis documentos\Visual Studio 2008\Projects\EntidadesCS\CarritoDeCompras_2012.CS\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\esteban\Mis documentos\Visual Studio 2008\Projects\EntidadesCS\CarritoDeCompras_2012.CS\obj\Debug\CarritoDeCompras_2012.CS.dll
+C:\Documents and Settings\esteban\Mis documentos\Visual Studio 2008\Projects\EntidadesCS\CarritoDeCompras_2012.CS\obj\Debug\CarritoDeCompras_2012.CS.pdb
+C:\Documents and Settings\esteban\Mis documentos\Visual Studio 2008\Projects\EntidadesCS\CarritoDeCompras_2012.CS\bin\Archivos_XML\ProcuctosCookieDatos.xml
+C:\Documents and Settings\esteban\Mis documentos\Visual Studio 2008\Projects\EntidadesCS\CarritoDeCompras_2012.CS\bin\EntidadesCS.dll
+C:\Documents and Settings\esteban\Mis documentos\Visual Studio 2008\Projects\EntidadesCS\CarritoDeCompras_2012.CS\bin\EntidadesCS.pdb
+C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\CarritoDeCompras_2012.CS\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\CarritoDeCompras_2012.CS\obj\Debug\CarritoDeCompras_2012.CS.dll
+C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\CarritoDeCompras_2012.CS\bin\CarritoDeCompras_2012.CS.dll
+C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\CarritoDeCompras_2012.CS\bin\CarritoDeCompras_2012.CS.pdb
+C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\CarritoDeCompras_2012.CS\bin\EntidadesCS.dll
+C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\CarritoDeCompras_2012.CS\bin\EntidadesCS.pdb
+C:\Users\Pavilion 6409\Desktop\FDA\facu\tssi\2012\Practica Profesional Supervisada\Practica Profesional Supervisada\PAII\EntidadesCS\EntidadesCS\CarritoDeCompras_2012.CS\obj\Debug\CarritoDeCompras_2012.CS.pdb
