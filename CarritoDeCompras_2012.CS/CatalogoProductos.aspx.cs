@@ -23,7 +23,7 @@ namespace CarritoDeCompras_2012.CS
         static string id_;
         static string precio_;
         static string cantidad_;
-        static int cantidad;
+        static int cantidad=1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,25 +52,49 @@ namespace CarritoDeCompras_2012.CS
              */          
 
             GridViewRow fila = GridView1.SelectedRow;
+
             // obtener id
-            id_ = "|" + fila.Cells[1].Text.ToString() + "|" + id_;
-            //elimino doble pipe (ver si se puede eliminar)
-            id_ = id_.Replace("||", "|");
+            //id_ = "|" + fila.Cells[1].Text.ToString() + "|" + id_;
+            ////elimino doble pipe (ver si se puede eliminar)
+            //id_ = id_.Replace("||", "|");
+
+
+            //SIN DOBLE PIPE
+            id_ = id_.Length > 0 ? fila.Cells[1].Text.ToString() + "|" + id_ : "|" + fila.Cells[1].Text.ToString() + "|" + id_;
+
+
+
+
             
             //obtener producto
-            producto_ = "|" + fila.Cells[2].Text.ToString() + "|" + producto_;
-            //elimino doble pipe (ver si se puede eliminar)
-            producto_ = producto_.Replace("||", "|");
+            //producto_ = "|" + fila.Cells[2].Text.ToString() + "|" + producto_;
+            ////elimino doble pipe (ver si se puede eliminar)
+            //producto_ = producto_.Replace("||", "|");
+
+            //SIN DOBLE PIPE
+            producto_ = producto_.Length > 0 ? fila.Cells[2].Text.ToString() + "|" + producto_ : "|" + fila.Cells[2].Text.ToString() + "|" + producto_;
+
+            
+
 
             //obtener precio
-            precio_ = "|" + fila.Cells[3].Text.ToString() + "|" + precio_;
-            //elimino doble pipe (ver si se puede eliminar)
-            precio_ = precio_.Replace("||", "|");
+            //precio_ = "|" + fila.Cells[3].Text.ToString() + "|" + precio_;
+            ////elimino doble pipe (ver si se puede eliminar)
+            //precio_ = precio_.Replace("||", "|");
 
-            //obtener cantidad
-            cantidad_ = "|" + cantidad.ToString() + "|" + cantidad.ToString();
-            //elimino doble pipe (ver si se puede eliminar)
-            cantidad_ = cantidad_.Replace("||", "|");
+            //SIN DOBLE PIPE
+            precio_ = precio_.Length > 0 ? fila.Cells[3].Text.ToString() + "|" + precio_ : "|" + fila.Cells[3].Text.ToString() + "|" + precio_;
+
+
+
+            //obtener cantidad (siempre sera 1)
+            //cantidad_ = "|" + cantidad.ToString() + "|" + cantidad_;
+            ////elimino doble pipe (ver si se puede eliminar)
+            //cantidad_ = cantidad_.Replace("||", "|");
+
+
+            //SIN DOBLE PIPE
+            cantidad_ = cantidad_.Length > 0 ? cantidad.ToString() + "|" + cantidad_ : "|" + cantidad.ToString() + "|" + cantidad_;
 
             //guardo datos recolectados
             Carrito.Values["I"] = id_;
