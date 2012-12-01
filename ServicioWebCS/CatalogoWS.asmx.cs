@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Data;
+using System.Security.Permissions;
+using System.Web.Caching;
+using System.Web.Hosting;
+
 
 namespace ServicioWebCS
 {
@@ -27,7 +31,8 @@ namespace ServicioWebCS
         [WebMethod]
         public DataSet ObtenerCatalogo()
         {
-            return EntidadesCS.Productos.TraerProductos();
+            /*le envie el path relativo*/
+            return EntidadesCS.Productos.TraerProductos(HostingEnvironment.ApplicationPhysicalPath.ToString());
         }
     }
 }
