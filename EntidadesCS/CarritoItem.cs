@@ -11,7 +11,10 @@ namespace EntidadesCS
             private int _cantidad;
             private int _idProducto;
             private string _nombreProducto;
-            private int _precioUnitario;
+            //utilizo valores en double para tomar los decimales
+            private double _precioUnitario;
+            //AGREGO COSTO TOTAL
+            private double _precioTotal;
 
             public int Cantidad
             {
@@ -28,11 +31,19 @@ namespace EntidadesCS
                 get { return _nombreProducto; }
                 set { _nombreProducto = value; }
             }
-            public int PrecioUnitario
+            public double PrecioUnitario
             {
                 get { return _precioUnitario; }
                 set { _precioUnitario = value; }
             }
+
+            public double PrecioTotal
+            {
+                get { return _precioTotal; }
+                set { _precioTotal = value; }
+            }
+
+
         
     }
 }
