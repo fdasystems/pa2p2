@@ -11,10 +11,10 @@ namespace EntidadesCS
             private int _cantidad;
             private int _idProducto;
             private string _nombreProducto;
-            //utilizo valores en float para tomar los decimales
-            private float _precioUnitario;
+            //utilizo valores en double para tomar los decimales
+            private double _precioUnitario;
             //AGREGO COSTO TOTAL
-            private float _precioTotal;
+            private double _precioTotal;
 
             public int Cantidad
             {
@@ -31,13 +31,13 @@ namespace EntidadesCS
                 get { return _nombreProducto; }
                 set { _nombreProducto = value; }
             }
-            public float PrecioUnitario
+            public double PrecioUnitario
             {
                 get { return _precioUnitario; }
                 set { _precioUnitario = value; }
             }
 
-            public float PrecioTotal
+            public double PrecioTotal
             {
                 get { return _precioTotal; }
                 set { _precioTotal = value; }

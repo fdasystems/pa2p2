@@ -161,10 +161,10 @@ namespace CarritoDeCompras_2012.CS
                 cI.NombreProducto = array_NombreProducto[posicion];
                 float conv = float.Parse(array_Precio[posicion].ToString());
                 //precio unitario
-                cI.PrecioUnitario = conv;
+                cI.PrecioUnitario = Math.Round(conv, 2);
                 //Obtengo el monto total
-                conv = conv * cant; 
-                cI.PrecioTotal = conv;
+                conv = conv * cant;
+                cI.PrecioTotal = Math.Round(conv, 2);
                 
             }
 
