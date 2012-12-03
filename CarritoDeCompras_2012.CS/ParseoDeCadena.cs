@@ -159,10 +159,12 @@ namespace CarritoDeCompras_2012.CS
                 int cant = int.Parse(cantidad);
                 cI.Cantidad = cant;
                 cI.NombreProducto = array_NombreProducto[posicion];
-                //precio_ = precio_.Replace("||", "|");
-                Double conv = Double.Parse(array_Precio[posicion].ToString());
-                conv = conv * cant;
-                cI.PrecioUnitario = int.Parse(conv.ToString()); //int.Parse(conv)
+                float conv = float.Parse(array_Precio[posicion].ToString());
+                //precio unitario
+                cI.PrecioUnitario = conv;
+                //Obtengo el monto total
+                conv = conv * cant; 
+                cI.PrecioTotal = conv;
                 
             }
 
@@ -202,17 +204,16 @@ namespace CarritoDeCompras_2012.CS
             string[] array_NombreProducto = NombreProducto.Split('|');
             string[] array_Precio = Precio.Split('|');
 
-
- 
-
+            //ahora creo un vector con el par id=cantidadcolumnas
             int cantidadDeColumnas = 2;
-
             int[,] resultado_final = DevolverCuantasVeces(array_id, cantidadDeColumnas);
 
+            //valores dentro del array
             int da = 0;
             int db = 0;
 
 
+            //recorro el array para obtener cada valor de item y luego guardo en el cookie
             for (int i = 0; i < resultado_final.GetLength(0); i++)
                 for (int j = 0; j < cantidadDeColumnas; j++)
                 {
@@ -222,24 +223,24 @@ namespace CarritoDeCompras_2012.CS
                     {
                         db = resultado_final[i, j];
 
-                        //    ListItem l = new ListItem(da.ToString(), db.ToString());
-                        //    ListBox5.Items.Add(l);
-                        db.ToString(); //me da el valor del item
-                        da.ToString(); //me da la cantidad de veces que aparece 
+                        
+                        string vi = da.ToString(); //me da el valor del item
+                        string cvqa = db.ToString(); //me da la cantidad de veces que aparece 
 
                         //opcion1, puedo obtener la posicion del valor en el array principal, 
                         //y moverme con esos valores en los otros arrays para recuperar los valores a guardar
-                        int posicion = CuantasVeces(db.ToString(), array_id, true);
+                        int posicion = CuantasVeces(vi, array_id, true);
                         if (int.Parse(db.ToString()) > 0)
                         {
-                            cI = GuardarPosicion(posicion, db.ToString(), da.ToString(), array_NombreProducto, array_Precio);
+                            //le paso la id y la posicion de esa id dentro de cada array con valores
+                            cI = GuardarPosicion(posicion, vi, cvqa, array_NombreProducto, array_Precio);
                             ListCarrito.Add(cI);
                         }
                     }
                 }
 
 
-
+            //devuelvo el carrito generado
             return ListCarrito; 
         }
 
