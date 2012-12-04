@@ -30,25 +30,71 @@ namespace CarritoDeCompras_2012.CS
 
         public void GenerarNuevaCookie(List<CarritoItem> Lc)
         {
-            //borro
-          Response.Cookies.Remove("CarritoDeCompras");
-              
+          //vars temp
+            string idp = "";
+            string can = "";
+            string nom = "";
+            string pun = "";
+           // string ptt = "";
+
+           
+
+            if (Request.Cookies["CarritoDeCompras"] != null)
+            {
+                //HttpCookie oldCookie = new HttpCookie("CarritoDeCompras");
+                //oldCookie.Expires = DateTime.Now.AddDays(-1d);
+                Request.Cookies["CarritoDeCompras"].Expires = DateTime.Now.AddDays(-1d);
+                //Response.Cookies.Add(oldCookie);
+            }
+
+
+            HttpCookie addCookie = new HttpCookie("CarritoDeCompras");
+
+
             //creo de nuevo
-          // Creamos elemento HttpCookie con su nombre y su valor
-          HttpCookie addCookie = new HttpCookie("CarritoDeCompras", DateTime.Now.ToString());
+            // Creamos elemento HttpCookie con su nombre y su valor
+            //HttpCookie addCookie = new HttpCookie("CarritoDeCompras", DateTime.Now.ToString());
+          //  HttpCookie addCookie = new HttpCookie("CarritoDeCompras");
+            
+            
+          //  //borro
+          //Response.Cookies.Remove("CarritoDeCompras");
+          //Response.Cookies.Clear();
+          //addCookie.Expires = DateTime.Today.AddDays(-1).AddSeconds(-1);
+          
 
           // Si queremos le asignamos un fecha de expiración: mañana
-          addCookie.Expires = DateTime.Today.AddDays(1).AddSeconds(-1);
-
-
+          //addCookie.Expires = DateTime.Today.AddDays(1).AddSeconds(-1);
+            int cont = Lc.Count();
+            int i = 1;
           foreach (CarritoItem Item in Lc)
           {
               // addCookie.Value = Item.idProducto;
               //guardo datos recolectados
-              addCookie.Values["I"] = "|" + Item.idProducto;
-              addCookie.Values["C"] = "|" + Item.Cantidad;
-              addCookie.Values["N"] = "|" + Item.NombreProducto;
-              addCookie.Values["P"] = "|" + Item.PrecioUnitario;
+              idp = idp + "|" + Item.idProducto;
+              can = can + "|" + Item.Cantidad;
+              nom = nom + "|" + Item.NombreProducto;
+              pun = pun + "|" + Item.PrecioUnitario;
+
+              //adiciono pipe final
+              if (i == cont)
+              {
+                  idp = idp + "|" ;
+                  can = can + "|" ;
+                  nom = nom + "|" ;
+                  pun = pun + "|" ;
+
+
+              }
+
+
+
+              addCookie.Values["I"] = idp;
+              addCookie.Values["C"] = can;
+              addCookie.Values["N"] = nom;
+              addCookie.Values["P"] = pun;
+
+              i = i+1;
           }
 
           //addCookie.Value = Lc; 
@@ -65,7 +111,12 @@ namespace CarritoDeCompras_2012.CS
 
         public List<CarritoItem> ObtenerCookie()
         {
-            string Cookie = HttpUtility.UrlDecode(Request.Cookies["CarritoDeCompras"].Values.ToString());
+            string Cookie="";
+
+            if (Request.Cookies["CarritoDeCompras"] != null)
+            {
+                Cookie = HttpUtility.UrlDecode(Request.Cookies["CarritoDeCompras"].Values.ToString());
+            }
             List<CarritoItem> ListCarrito = new List<CarritoItem>();
 
             ListCarrito = ParsearCookie.ParsearCookieYGenerar(Cookie);
@@ -96,7 +147,9 @@ namespace CarritoDeCompras_2012.CS
 
             GenerarNuevaCookie(LCarrito);
 
-            CargarGrillaDeCookies();
+            //CargarGrillaDeCookies();
+            Response.Redirect("Carrito.aspx");
+
               // HttpCookie MultiCookie = Request.Cookies.Get("CarritoDeCompras");    
              //   string valorCualquiera = MultiCookie.Values.Get("5");
             

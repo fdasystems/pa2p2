@@ -183,8 +183,8 @@ namespace CarritoDeCompras_2012.CS
             CarritoItem cI = new CarritoItem();
             List<CarritoItem> ListCarrito = new List<CarritoItem>();
 
-            int size = s2.Length;
-            int finaldatos = size - 2; //asi quito el caracter de escape y el pipe
+            int size = s2.Length; // DEBO AGREGAR IF SIZE >0... HACER TODO (ES CUANDO NO HAY MAS ITEMS -SE ELIMINA EL ULTIMO-)
+            int finaldatos = size - 1; //asi quito el pipe (sin usar caracter de escape)
             //manejo el incremento para por los caracteres de identificacion (es decir C=&)
             int inc = 3;
             //& me separa las variables dentro de la cookie, hay 3 separaciones
@@ -193,7 +193,7 @@ namespace CarritoDeCompras_2012.CS
             int indexofc = Contiene(s2, "&", 3);
 
             //aca agregamos solo los datos a cada valor de item
-            string id = s2.Substring(inc, indexofa - inc);
+            string id = s2.Substring(inc, indexofa - inc); //OJO, Cuando elimino el ultimo aca no vale nada...
             string cantidad = s2.Substring(s2.IndexOf("C=", 1) + inc, indexofb - indexofa - inc - 1);
             string NombreProducto = s2.Substring(s2.IndexOf("N=", 1) + inc, indexofc - indexofb - inc - 1);
             string Precio = s2.Substring(s2.IndexOf("P=", 1) + inc, finaldatos - indexofc - inc - 1);
