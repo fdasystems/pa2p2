@@ -37,30 +37,15 @@ namespace CarritoDeCompras_2012.CS
             string pun = "";
            // string ptt = "";
 
-           
 
+            //borro
             if (Request.Cookies["CarritoDeCompras"] != null)
             {
-                //HttpCookie oldCookie = new HttpCookie("CarritoDeCompras");
-                //oldCookie.Expires = DateTime.Now.AddDays(-1d);
                 Request.Cookies["CarritoDeCompras"].Expires = DateTime.Now.AddDays(-1d);
-                //Response.Cookies.Add(oldCookie);
             }
 
-
-            HttpCookie addCookie = new HttpCookie("CarritoDeCompras");
-
-
             //creo de nuevo
-            // Creamos elemento HttpCookie con su nombre y su valor
-            //HttpCookie addCookie = new HttpCookie("CarritoDeCompras", DateTime.Now.ToString());
-          //  HttpCookie addCookie = new HttpCookie("CarritoDeCompras");
-            
-            
-          //  //borro
-          //Response.Cookies.Remove("CarritoDeCompras");
-          //Response.Cookies.Clear();
-          //addCookie.Expires = DateTime.Today.AddDays(-1).AddSeconds(-1);
+            HttpCookie addCookie = new HttpCookie("CarritoDeCompras");
           
 
           // Si queremos le asignamos un fecha de expiración: mañana
@@ -69,7 +54,7 @@ namespace CarritoDeCompras_2012.CS
             int i = 1;
           foreach (CarritoItem Item in Lc)
           {
-              // addCookie.Value = Item.idProducto;
+
               //guardo datos recolectados
               idp = idp + "|" + Item.idProducto;
               can = can + "|" + Item.Cantidad;
@@ -97,7 +82,7 @@ namespace CarritoDeCompras_2012.CS
               i = i+1;
           }
 
-          //addCookie.Value = Lc; 
+
 
           // Y finalmente Añadimos la cookie a nuestro usuario
           Response.Cookies.Add(addCookie);
@@ -137,29 +122,24 @@ namespace CarritoDeCompras_2012.CS
         {
             List<CarritoItem> LCarrito = new List<CarritoItem>();
             CarritoItem cI = new CarritoItem();
-            //string id = this.GridView1.Rows[this.GridView1.SelectedIndex].Cells[2].Text;
+
 
             int id = this.GridView1.SelectedIndex;
-            //total.Text = id;
+            
             LCarrito = ObtenerCookie();
-            //LCarrito.RemoveAt(int.Parse(id));
             LCarrito.RemoveAt(id);
-
             GenerarNuevaCookie(LCarrito);
 
-            //CargarGrillaDeCookies();
+            //Vuelvo a llamar a la pagina para que relea la cookie
             Response.Redirect("Carrito.aspx");
-
-              // HttpCookie MultiCookie = Request.Cookies.Get("CarritoDeCompras");    
-             //   string valorCualquiera = MultiCookie.Values.Get("5");
-            
-
-
         }
 
 
 
-
+        protected void btnComprar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Compras.aspx");
+        }
 
         protected void btnRecalcular_Click(object sender, EventArgs e)
         {
@@ -181,9 +161,6 @@ namespace CarritoDeCompras_2012.CS
 
             total.Text = totalcompra.ToString();
         }
-
-
-
 
     }
 }

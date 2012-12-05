@@ -53,6 +53,11 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\CompraCarrito.mdf">
+    </Content>
+    <Content Include="App_Data\CompraCarrito_log.ldf">
+      <DependentUpon>CompraCarrito.mdf</DependentUpon>
+    </Content>
     <Content Include="CatalogoWS.asmx" />
     <Content Include="VentasWS.asmx" />
     <Content Include="Web.config" />
@@ -80,9 +85,6 @@
       <Project>{A33C8205-B07D-41A7-9B1B-865C8CF113B7}</Project>
       <Name>EntidadesCS</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

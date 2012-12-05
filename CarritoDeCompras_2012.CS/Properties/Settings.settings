@@ -5,5 +5,8 @@
     <Setting Name="CarritoDeCompras_2012_CS_ProxyWS_CatalogoWS" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:6616/CatalogoWS.asmx</Value>
     </Setting>
+    <Setting Name="CarritoDeCompras_2012_CS_ProxyVentasWS_VentasWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:6616/VentasWS.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

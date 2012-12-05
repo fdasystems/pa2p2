@@ -184,60 +184,69 @@ namespace CarritoDeCompras_2012.CS
             List<CarritoItem> ListCarrito = new List<CarritoItem>();
 
             int size = s2.Length; // DEBO AGREGAR IF SIZE >0... HACER TODO (ES CUANDO NO HAY MAS ITEMS -SE ELIMINA EL ULTIMO-)
-            int finaldatos = size - 1; //asi quito el pipe (sin usar caracter de escape)
-            //manejo el incremento para por los caracteres de identificacion (es decir C=&)
-            int inc = 3;
-            //& me separa las variables dentro de la cookie, hay 3 separaciones
-            int indexofa = Contiene(s2, "&", 1);
-            int indexofb = Contiene(s2, "&", 2);
-            int indexofc = Contiene(s2, "&", 3);
-
-            //aca agregamos solo los datos a cada valor de item
-            string id = s2.Substring(inc, indexofa - inc); //OJO, Cuando elimino el ultimo aca no vale nada...
-            string cantidad = s2.Substring(s2.IndexOf("C=", 1) + inc, indexofb - indexofa - inc - 1);
-            string NombreProducto = s2.Substring(s2.IndexOf("N=", 1) + inc, indexofc - indexofb - inc - 1);
-            string Precio = s2.Substring(s2.IndexOf("P=", 1) + inc, finaldatos - indexofc - inc - 1);
-
-            //una vez obtenidas todas las variables separamos las comlumnas en arrays
-            string[] array_id = id.Split('|');
-            string[] array_cantidad = cantidad.Split('|');
-            string[] array_NombreProducto = NombreProducto.Split('|');
-            string[] array_Precio = Precio.Split('|');
-
-            //ahora creo un vector con el par id=cantidadcolumnas
-            int cantidadDeColumnas = 2;
-            int[,] resultado_final = DevolverCuantasVeces(array_id, cantidadDeColumnas);
-
-            //valores dentro del array
-            int da = 0;
-            int db = 0;
 
 
-            //recorro el array para obtener cada valor de item y luego guardo en el cookie
-            for (int i = 0; i < resultado_final.GetLength(0); i++)
-                for (int j = 0; j < cantidadDeColumnas; j++)
-                {
-                    if (j == 0)
-                        da = resultado_final[i, j];
-                    else
+            if (size > 0)
+            {
+
+                int finaldatos = size - 1; //asi quito el pipe (sin usar caracter de escape)
+                //manejo el incremento para por los caracteres de identificacion (es decir C=&)
+                int inc = 3;
+                //& me separa las variables dentro de la cookie, hay 3 separaciones
+                int indexofa = Contiene(s2, "&", 1);
+                int indexofb = Contiene(s2, "&", 2);
+                int indexofc = Contiene(s2, "&", 3);
+
+                //aca agregamos solo los datos a cada valor de item
+                string id = s2.Substring(inc, indexofa - inc); //OJO, Cuando elimino el ultimo aca no vale nada...
+                string cantidad = s2.Substring(s2.IndexOf("C=", 1) + inc, indexofb - indexofa - inc - 1);
+                string NombreProducto = s2.Substring(s2.IndexOf("N=", 1) + inc, indexofc - indexofb - inc - 1);
+                string Precio = s2.Substring(s2.IndexOf("P=", 1) + inc, finaldatos - indexofc - inc - 1);
+
+                //una vez obtenidas todas las variables separamos las comlumnas en arrays
+                string[] array_id = id.Split('|');
+                string[] array_cantidad = cantidad.Split('|');
+                string[] array_NombreProducto = NombreProducto.Split('|');
+                string[] array_Precio = Precio.Split('|');
+
+                //ahora creo un vector con el par id=cantidadcolumnas
+                int cantidadDeColumnas = 2;
+                int[,] resultado_final = DevolverCuantasVeces(array_id, cantidadDeColumnas);
+
+                //valores dentro del array
+                int da = 0;
+                int db = 0;
+
+
+                //recorro el array para obtener cada valor de item y luego guardo en el cookie
+                for (int i = 0; i < resultado_final.GetLength(0); i++)
+                    for (int j = 0; j < cantidadDeColumnas; j++)
                     {
-                        db = resultado_final[i, j];
-
-                        
-                        string vi = da.ToString(); //me da el valor del item
-                        string cvqa = db.ToString(); //me da la cantidad de veces que aparece 
-
-                        //opcion1, puedo obtener la posicion del valor en el array principal, 
-                        //y moverme con esos valores en los otros arrays para recuperar los valores a guardar
-                        int posicion = CuantasVeces(vi, array_id, true);
-                        if (int.Parse(db.ToString()) > 0)
+                        if (j == 0)
+                            da = resultado_final[i, j];
+                        else
                         {
-                            //le paso la id y la posicion de esa id dentro de cada array con valores
-                            cI = GuardarPosicion(posicion, vi, cvqa, array_NombreProducto, array_Precio);
-                            ListCarrito.Add(cI);
-                        }
-                    }
-                }
+                            db = resultado_final[i, j];
+
+
+                            string vi = da.ToString(); //me da el valor del item
+                            string cvqa = db.ToString(); //me da la cantidad de veces que aparece 
+
+                            //opcion1, puedo obtener la posicion del valor en el array principal, 
+                            //y moverme con esos valores en los otros arrays para recuperar los valores a guardar
+                            int posicion = CuantasVeces(vi, array_id, true);
+                            if (int.Parse(db.ToString()) > 0)
+                            {
+                                //le paso la id y la posicion de esa id dentro de cada array con valores
+                                cI = GuardarPosicion(posicion, vi, cvqa, array_NombreProducto, array_Precio);
+                                ListCarrito.Add(cI);
+                            }
+                        }//de if j
+                    } //de for
+
+            } //de if size
+            else //si no existen datos para parsear entonces es el ultimo eliminado
+                ListCarrito = null;
 
 
             //devuelvo el carrito generado

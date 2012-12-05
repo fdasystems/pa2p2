@@ -3,7 +3,7 @@ CodeBehind="CatalogoProductos.aspx.cs" Inherits="CarritoDeCompras_2012.CS.Catalo
 
 
 <asp:Content ContentPlaceHolderID="ContentImagen" runat="server">
-    <asp:Image runat="server" ImageUrl="~/compras.jpg" ToolTip="Catalogo" Height="600px" Width="100%" />    
+    <asp:Image runat="server" ImageUrl="~/imgs/mth.jpg" ToolTip="Catalogo" Height="600px" Width="100%" />    
 </asp:Content>
 
 

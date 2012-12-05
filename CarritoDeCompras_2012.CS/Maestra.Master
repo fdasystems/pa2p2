@@ -24,29 +24,38 @@
                 BorderStyle="Dotted">
                 
                     <asp:Menu runat="server" ID="menu1" DataSourceID="SiteMapDataSource1" >
-                    <DataBindings>
-                                                
+<%--                    <DataBindings>                         
                         <asp:MenuItemBinding DataMember="SiteMapNode" Text="Catalogo" NavigateUrl="~/CatalogoProductos.aspx" />
                         <asp:MenuItemBinding DataMember="SiteMapNode" Text="Home" NavigateUrl="~/Default.aspx" />
                         <asp:MenuItemBinding DataMember="SiteMapNode" Text="Carrito" NavigateUrl="~/Carrito.aspx" />
-                    </DataBindings>
+                    </DataBindings>--%>
                 </asp:Menu>
                     
                 </asp:TableCell>
             
+            
+            
+            
+            
+            
         </asp:TableRow>
         
         <asp:TableRow>
-            <asp:TableCell Width="60%" BorderStyle="Dotted"><asp:ContentPlaceHolder ID="ContentBody" runat="server"></asp:ContentPlaceHolder>
+            <asp:TableCell Width="60%" BorderStyle="Dotted">
+            <asp:ContentPlaceHolder ID="ContentBody" runat="server"></asp:ContentPlaceHolder>
             </asp:TableCell>
-            <asp:TableCell>
-                
+            <asp:TableCell Width="60%" BorderStyle="Dotted">
+                  <asp:ContentPlaceHolder ID="adrot" runat="server"></asp:ContentPlaceHolder>
             </asp:TableCell>
         </asp:TableRow>
         
     </asp:Table>
         
-        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+        </asp:SiteMapPath>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" 
+            StartingNodeUrl="~/Default.aspx" />
+        <asp:AdRotator ID="AdRotator1" runat="server" />
 
     </div>
     </form>

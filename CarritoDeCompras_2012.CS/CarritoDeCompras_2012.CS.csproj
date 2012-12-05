@@ -55,20 +55,30 @@
   <ItemGroup>
     <Content Include="Carrito.aspx" />
     <Content Include="CatalogoProductos.aspx" />
-    <Content Include="compras.jpg" />
+    <Content Include="Compras.aspx" />
+    <Content Include="imgs\calc.jpg" />
     <Content Include="Default.aspx" />
+    <Content Include="imgs\fincompra.jpg" />
+    <Content Include="imgs\home.jpg" />
+    <Content Include="imgs\mth.jpg" />
     <Content Include="Maestra.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Menues_Borrar.aspx" />
+    <None Include="Web References\ProxyVentasWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ProxyVentasWS\VentasWS.wsdl" />
     <None Include="Web References\ProxyWS\CatalogoWS.disco" />
     <None Include="Web References\ProxyWS\CatalogoWS.wsdl" />
     <None Include="Web References\ProxyWS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Web References\ProxyVentasWS\VentasWS.disco" />
     <Content Include="Web.sitemap" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -86,6 +96,13 @@
     </Compile>
     <Compile Include="CatalogoProductos.aspx.designer.cs">
       <DependentUpon>CatalogoProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Compras.aspx.cs">
+      <DependentUpon>Compras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Compras.aspx.designer.cs">
+      <DependentUpon>Compras.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -117,6 +134,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Web References\ProxyVentasWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\ProxyWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,6 +165,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>CarritoDeCompras_2012_CS_ProxyWS_CatalogoWS</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:6616/VentasWS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ProxyVentasWS\</RelPath>
+      <UpdateFromURL>http://localhost:6616/VentasWS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CarritoDeCompras_2012_CS_ProxyVentasWS_VentasWS</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>

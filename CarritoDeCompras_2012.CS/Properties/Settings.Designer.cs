@@ -32,5 +32,15 @@ namespace CarritoDeCompras_2012.CS.Properties {
                 return ((string)(this["CarritoDeCompras_2012_CS_ProxyWS_CatalogoWS"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:6616/VentasWS.asmx")]
+        public string CarritoDeCompras_2012_CS_ProxyVentasWS_VentasWS {
+            get {
+                return ((string)(this["CarritoDeCompras_2012_CS_ProxyVentasWS_VentasWS"]));
+            }
+        }
     }
 }
