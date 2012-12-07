@@ -94,9 +94,12 @@ namespace CarritoDeCompras_2012.CS
 
 
 
+
+
+        //List
         public List<CarritoItem> ObtenerCookie()
         {
-            string Cookie="";
+            string Cookie = "";
 
             if (Request.Cookies["CarritoDeCompras"] != null)
             {
@@ -106,9 +109,17 @@ namespace CarritoDeCompras_2012.CS
 
             ListCarrito = ParsearCookie.ParsearCookieYGenerar(Cookie);
 
-            return ListCarrito; 
+            return ListCarrito;
         }
         
+
+
+
+
+
+
+
+
         
         
         public void CargarGrillaDeCookies()

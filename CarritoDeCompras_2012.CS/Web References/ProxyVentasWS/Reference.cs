@@ -31,6 +31,8 @@ namespace CarritoDeCompras_2012.CS.ProxyVentasWS {
         
         private System.Threading.SendOrPostCallback HolaDesdeVentasOperationCompleted;
         
+        private System.Threading.SendOrPostCallback crearListadoOperationCompleted;
+        
         private System.Threading.SendOrPostCallback AgregarVentaOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -75,34 +77,64 @@ namespace CarritoDeCompras_2012.CS.ProxyVentasWS {
         public event HolaDesdeVentasCompletedEventHandler HolaDesdeVentasCompleted;
         
         /// <remarks/>
+        public event crearListadoCompletedEventHandler crearListadoCompleted;
+        
+        /// <remarks/>
         public event AgregarVentaCompletedEventHandler AgregarVentaCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("localhost/VentasWS.asmx/HolaDesdeVentas", RequestNamespace="localhost/VentasWS.asmx", ResponseNamespace="localhost/VentasWS.asmx", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string HolaDesdeVentas(CarritoItem[] listado) {
-            object[] results = this.Invoke("HolaDesdeVentas", new object[] {
-                        listado});
-            return ((string)(results[0]));
+        public CarritoItem[] HolaDesdeVentas() {
+            object[] results = this.Invoke("HolaDesdeVentas", new object[0]);
+            return ((CarritoItem[])(results[0]));
         }
         
         /// <remarks/>
-        public void HolaDesdeVentasAsync(CarritoItem[] listado) {
-            this.HolaDesdeVentasAsync(listado, null);
+        public void HolaDesdeVentasAsync() {
+            this.HolaDesdeVentasAsync(null);
         }
         
         /// <remarks/>
-        public void HolaDesdeVentasAsync(CarritoItem[] listado, object userState) {
+        public void HolaDesdeVentasAsync(object userState) {
             if ((this.HolaDesdeVentasOperationCompleted == null)) {
                 this.HolaDesdeVentasOperationCompleted = new System.Threading.SendOrPostCallback(this.OnHolaDesdeVentasOperationCompleted);
             }
-            this.InvokeAsync("HolaDesdeVentas", new object[] {
-                        listado}, this.HolaDesdeVentasOperationCompleted, userState);
+            this.InvokeAsync("HolaDesdeVentas", new object[0], this.HolaDesdeVentasOperationCompleted, userState);
         }
         
         private void OnHolaDesdeVentasOperationCompleted(object arg) {
             if ((this.HolaDesdeVentasCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.HolaDesdeVentasCompleted(this, new HolaDesdeVentasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("localhost/VentasWS.asmx/crearListado", RequestNamespace="localhost/VentasWS.asmx", ResponseNamespace="localhost/VentasWS.asmx", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public CarritoItem[] crearListado(string test) {
+            object[] results = this.Invoke("crearListado", new object[] {
+                        test});
+            return ((CarritoItem[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void crearListadoAsync(string test) {
+            this.crearListadoAsync(test, null);
+        }
+        
+        /// <remarks/>
+        public void crearListadoAsync(string test, object userState) {
+            if ((this.crearListadoOperationCompleted == null)) {
+                this.crearListadoOperationCompleted = new System.Threading.SendOrPostCallback(this.OncrearListadoOperationCompleted);
+            }
+            this.InvokeAsync("crearListado", new object[] {
+                        test}, this.crearListadoOperationCompleted, userState);
+        }
+        
+        private void OncrearListadoOperationCompleted(object arg) {
+            if ((this.crearListadoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.crearListadoCompleted(this, new crearListadoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -288,10 +320,36 @@ namespace CarritoDeCompras_2012.CS.ProxyVentasWS {
         }
         
         /// <remarks/>
-        public string Result {
+        public CarritoItem[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((CarritoItem[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.4918")]
+    public delegate void crearListadoCompletedEventHandler(object sender, crearListadoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.4918")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class crearListadoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal crearListadoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CarritoItem[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CarritoItem[])(this.results[0]));
             }
         }
     }
