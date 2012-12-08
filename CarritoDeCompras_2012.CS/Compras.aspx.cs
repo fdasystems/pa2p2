@@ -120,10 +120,22 @@ namespace CarritoDeCompras_2012.CS
             //veo si con escritura se va
             Response.Cookies.Add(addCookie);
 
-            //lo mando al inicio
-            Response.Redirect("Carrito.aspx"); //para debug x ahora p ver el cookie
+            //habilito y deshabilito
+            btnComprar.Enabled = false;
+            btnFinalizar.Enabled = true;
+
             
         }
+
+
+
+        protected void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            //lo mando al inicio
+            Response.Redirect("Carrito.aspx"); //para debug x ahora p ver el cookie
+        
+        }
+
 
     }
 }
