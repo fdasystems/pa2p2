@@ -27,8 +27,9 @@ namespace CarritoDeCompras_2012.CS
         }
 
 
-        protected void btnComprar_Click(object sender, EventArgs e)
+        public static CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem lccTolc(CarritoItem pf)
         {
+<<<<<<< HEAD
             /****************************************************************
             /****************************************************************
             /****************************************************************
@@ -69,7 +70,30 @@ namespace CarritoDeCompras_2012.CS
             LCarrito = opercar.ObtenerCookie();
 
 			//esta es la forma manual... (que es lo que hace el metodo obtenercookie) pero tampoco funca
+=======
+            //return new Point(((int)pf.X), ((int)pf.Y));
+            //CarritoItem cI = new CarritoItem();
+            CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem cI = new CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem();
+
+            cI.idProducto = pf.idProducto;
+            cI.NombreProducto = pf.NombreProducto;
+            cI.Cantidad = pf.Cantidad;
+            cI.PrecioUnitario = pf.PrecioUnitario;
+            cI.PrecioTotal = pf.PrecioTotal;
+
+            return cI;
+
+
+
+
+        }
+
+
+        public List<CarritoItem> ObtenerCookie()
+        {
+>>>>>>> 12f4f9a21e280466d56014320f04afa91668e36d
             string Cookie = "";
+
             if (Request.Cookies["CarritoDeCompras"] != null)
             {
                 Cookie = HttpUtility.UrlDecode(Request.Cookies["CarritoDeCompras"].Values.ToString());
@@ -77,27 +101,77 @@ namespace CarritoDeCompras_2012.CS
             List<CarritoItem> ListCarrito = new List<CarritoItem>();
 
             ListCarrito = ParsearCookie.ParsearCookieYGenerar(Cookie);
+<<<<<<< HEAD
             LCarrito = ParsearCookie.ParsearCookieYGenerar(Cookie); //Error	1	No se puede convertir implícitamente el tipo 'System.Collections.Generic.List<EntidadesCS.CarritoItem>' en 'CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem[]'	D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\CarritoDeCompras_2012.CS\Compras.aspx.cs	63	24	CarritoDeCompras_2012.CS
 
             //ver xq los tipos no me acepta...
            // LCarrito = (CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem[])ListCarrito.ConvertAll();
+=======
+
+            return ListCarrito;
+        }
+        
+
+>>>>>>> 12f4f9a21e280466d56014320f04afa91668e36d
 
 
-            //Primero instanciamos el servicio
-            //Cliente c = new Cliente();
-            //Cliente c = new Cliente(this.nom.Text, this.ape.Text, this.mail.Text); 
-          // EntidadesCS.Cliente c = new EntidadesCS.Cliente();
-            //CarritoDeCompras_2012.CS.ProxyVentasWS.Cliente c = new CarritoDeCompras_2012.CS.ProxyVentasWS.Cliente(this.nom.Text, this.ape.Text, this.mail.Text);
+        protected void btnComprar_Click(object sender, EventArgs e)
+        {
+            
+            List<CarritoItem> LCCarrito = new List<CarritoItem>();
+            CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem[] LCarrito = new CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem[100];
+            CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem cI = new CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem();
+            
+           
+            LCCarrito = ObtenerCookie();
+
+
+            int pos = 0;
+
+            foreach (CarritoItem Item in  LCCarrito)
+            {
+                cI = lccTolc(Item);
+                LCarrito[pos] = cI;
+                //LCarrito.Add(cI);
+                pos++;
+            }
+
+
+            //invocar al webservice
+            ProxyVentasWS.VentasWS ws = new ProxyVentasWS.VentasWS();
+            
             CarritoDeCompras_2012.CS.ProxyVentasWS.Cliente c = new CarritoDeCompras_2012.CS.ProxyVentasWS.Cliente();
             
             c.Nombre = nom.Text; 
             c.Apellido = ape.Text;
             c.Email = mail.Text;
 
-            //Cliente(string nom, string ape, string email)
-            //Declarando el WEbSErvice
-            ws.AgregarVenta(c, LCarrito);
+
+            //vemos que devuelve
+            string mensaje =ws.AgregarVenta(c, LCarrito)? "Datos Guardados Correctamente": "Error critico: No se guardaron los datos.";
             
+
+
+            //y lo informamos
+            string i = "<script>window.alert('";
+            string f = "');</script>";
+            mensaje = i + mensaje + f;
+
+            Response.Write(mensaje);
+
+            //limpiamos valores
+            //borro
+            if (Request.Cookies["CarritoDeCompras"] != null)
+            {
+                Request.Cookies["CarritoDeCompras"].Expires = DateTime.Now.AddDays(-1d);
+            }
+            //creo de nuevo
+            HttpCookie addCookie = new HttpCookie("CarritoDeCompras");
+            //veo si con escritura se va
+            Response.Cookies.Add(addCookie);
+
+            //lo mando al inicio
+            Response.Redirect("Carrito.aspx"); //para debug x ahora p ver el cookie
             
         }
 

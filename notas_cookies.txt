@@ -1,0 +1,54 @@
+faltantes cookies¨;¨
+
+1) QUE SE ELIMINE LA COOKIE.. APARENTEMENTE SI SE ELIMINA CUANDO VUELVO AL CARRITO.ASPX PERO CUANDO VOY AL LISTADO LA RECUPERA...
+2) QUE TOME CORRECTAMENTE LOS VALORES EN NOMBRE DE PRODUCTO... (Ver ejemplo debajo)
+3) QUE MUESTRE EL MENSAJE DE GRABACION CORRECTA, Y LUEGO RECIEN SE REDIRECCIONE(SE PUEDE PONER UN BOTON "FINALIZAR")
+4) GESTION DE PAGINAS DE ERRORES...
+
+
+
+en pagina 6
+id	nombre		precio	
+54	Tourtière	7,4500
+
+se toma como.. 
+ourti&#232   (y aca termina la cadena... entonces me caga todo...==)
+
+
+
+
+Tourtière
+
+
+    public static string RemoveDiacritics(string stIn)
+    {
+        string stFormD = stIn.Normalize(NormalizationForm.FormD);
+        StringBuilder sb = new StringBuilder();
+
+        for(int ich = 0; ich < stFormD.Length; ich++) {
+            UnicodeCategory uc = CharUnicodeInfo.GetUnicodeCategory(stFormD[ich]);
+            if(uc != UnicodeCategory.NonSpacingMark) {
+                sb.Append(stFormD[ich]);
+            }
+        }
+
+        return(sb.ToString().Normalize(NormalizationForm.FormC));
+    }
+
+
+
+
+
+    public static string RemoveDiacritics(this string str)
+    {
+        if (str == null) return null;
+        var chars =
+            from c in str.Normalize(NormalizationForm.FormD).ToCharArray()
+            let uc = CharUnicodeInfo.GetUnicodeCategory(c)
+            where uc != UnicodeCategory.NonSpacingMark
+            select c;
+
+        var cleanStr = new string(chars.ToArray()).Normalize(NormalizationForm.FormC);
+
+        return cleanStr;
+    }

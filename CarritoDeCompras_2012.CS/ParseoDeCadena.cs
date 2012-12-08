@@ -15,6 +15,11 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using EntidadesCS;
 
+
+//parseo de cadenas
+using System.Text;
+using System.Globalization;
+
 namespace CarritoDeCompras_2012.CS
 {
     public partial class Parseador : System.Web.UI.Page
@@ -174,7 +179,19 @@ namespace CarritoDeCompras_2012.CS
 
 
 
+        public static string RemoveDiacritics(string str)
+        {
+            if (str == null) return null;
+            var chars =
+                from c in str.Normalize(NormalizationForm.FormD).ToCharArray()
+                let uc = CharUnicodeInfo.GetUnicodeCategory(c)
+                where uc != UnicodeCategory.NonSpacingMark
+                select c;
 
+            var cleanStr = new string(chars.ToArray()).Normalize(NormalizationForm.FormC);
+
+            return cleanStr;
+        }
 
 
         public List<CarritoItem> ParsearCookieYGenerar(string s2)
@@ -182,6 +199,10 @@ namespace CarritoDeCompras_2012.CS
 
             CarritoItem cI = new CarritoItem();
             List<CarritoItem> ListCarrito = new List<CarritoItem>();
+
+            //Pruebo reemplazo caracteres primero...
+            s2 = RemoveDiacritics(s2);
+
 
             int size = s2.Length; // DEBO AGREGAR IF SIZE >0... HACER TODO (ES CUANDO NO HAY MAS ITEMS -SE ELIMINA EL ULTIMO-)
 

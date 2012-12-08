@@ -12,50 +12,56 @@
     <form id="form1" runat="server">
     <div>
         
-    <asp:Table runat="server" ID="tabla1" Width="100%" Height="600px" BorderStyle="Dotted">
-        <asp:TableRow>
-            <asp:TableCell RowSpan="2" runat="server" Height="600px" Width="20%" BorderStyle="Dotted">
-                
-                <asp:ContentPlaceHolder ID="ContentImagen" runat="server"></asp:ContentPlaceHolder>
-                                
-            </asp:TableCell>
-            
-                <asp:TableCell runat="server" ColumnSpan="2" Height="10%" VerticalAlign="Top" 
-                BorderStyle="Dotted">
-                
+    
+<table width="%100" >
+    <tr>
+        <td>
+                <table>
+                    <tr>
+                        <td rowspan ="2" >
+                        <asp:ContentPlaceHolder ID="ContentImagen" runat="server"></asp:ContentPlaceHolder>
+                        </td>
+                        
+                        <td colspan="2">
                     <asp:Menu runat="server" ID="menu1" DataSourceID="SiteMapDataSource1" >
+                          <DynamicSelectedStyle BackColor="lightblue" ForeColor="Blue" />
+                          <DynamicHoverStyle Font-Underline="true" />
+                          <StaticHoverStyle Font-Underline="true" />
 <%--                    <DataBindings>                         
                         <asp:MenuItemBinding DataMember="SiteMapNode" Text="Catalogo" NavigateUrl="~/CatalogoProductos.aspx" />
                         <asp:MenuItemBinding DataMember="SiteMapNode" Text="Home" NavigateUrl="~/Default.aspx" />
                         <asp:MenuItemBinding DataMember="SiteMapNode" Text="Carrito" NavigateUrl="~/Carrito.aspx" />
                     </DataBindings>--%>
-                </asp:Menu>
+                </asp:Menu></td>
+                    </tr>
                     
-                </asp:TableCell>
-            
-            
-            
-            
-            
-            
-        </asp:TableRow>
+                    <tr>
+                        <td>
+                        <asp:ContentPlaceHolder ID="ContentBody" runat="server"></asp:ContentPlaceHolder>
+                        </td>
+                        
+                        <td>
+                        <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/App_Data/para_adRotator.xml"/>
+                        </td>                        
+                    </tr>
+                    
+                   
+                    
+                </table>
+        </td>    
+    </tr>
+</table>    
+    
+
+    
+    
+    
+    
         
-        <asp:TableRow>
-            <asp:TableCell Width="60%" BorderStyle="Dotted">
-            <asp:ContentPlaceHolder ID="ContentBody" runat="server"></asp:ContentPlaceHolder>
-            </asp:TableCell>
-            <asp:TableCell Width="60%" BorderStyle="Dotted">
-                  <asp:ContentPlaceHolder ID="adrot" runat="server"></asp:ContentPlaceHolder>
-            </asp:TableCell>
-        </asp:TableRow>
-        
-    </asp:Table>
-        
-        <asp:SiteMapPath ID="SiteMapPath1" runat="server">
-        </asp:SiteMapPath>
-        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" 
-            StartingNodeUrl="~/Default.aspx" />
-        <asp:AdRotator ID="AdRotator1" runat="server" />
+<%--        <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+        </asp:SiteMapPath>--%>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+    
 
     </div>
     </form>
