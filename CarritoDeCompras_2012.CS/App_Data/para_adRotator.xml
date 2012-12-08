@@ -1,0 +1,31 @@
+<Advertisements>
+  <Ad>
+    <ImageUrl>~/imgs/imgad1.jpg</ImageUrl>
+    <height>60</height>
+    <width>190</width>
+    <NavigateUrl>http://www.linux.org</NavigateUrl>
+    <AlternateText>Thinking Linux!</AlternateText>
+    <Impressions>80</Impressions>
+    <Keyword>Thinking Linux</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/imgs/imgad2.jpg</ImageUrl>
+    <height>90</height>
+    <width>90</width>
+    <NavigateUrl>http://www.fdas.com.ar</NavigateUrl>
+    <AlternateText>FDASYSTEMS</AlternateText>
+    <Impressions>80</Impressions>
+    <Keyword>Formadores Dinamicos Activos</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/imgs/imgad3.jpg</ImageUrl>
+    <height>90</height>
+    <width>90</width>
+    <NavigateUrl>http://www.mac.com</NavigateUrl>
+    <AlternateText>Think Different!</AlternateText>
+    <Impressions>80</Impressions>
+    <Keyword>Think Different!</Keyword>
+  </Ad>
+
+
+</Advertisements>

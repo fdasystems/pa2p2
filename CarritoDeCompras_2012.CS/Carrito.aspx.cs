@@ -104,9 +104,11 @@ namespace CarritoDeCompras_2012.CS
             if (Request.Cookies["CarritoDeCompras"] != null)
             {
                 Cookie = HttpUtility.UrlDecode(Request.Cookies["CarritoDeCompras"].Values.ToString());
+                //Cookie = HttpUtility. (Request.Cookies["CarritoDeCompras"].Values.ToString());
+               // Cookie = Request.Cookies["CarritoDeCompras"].Values.ToString();
             }
             List<CarritoItem> ListCarrito = new List<CarritoItem>();
-
+            
             ListCarrito = ParsearCookie.ParsearCookieYGenerar(Cookie);
 
             return ListCarrito;

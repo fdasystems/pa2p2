@@ -23,15 +23,6 @@ namespace CarritoDeCompras_2012.CS {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control tabla1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tabla1;
-        
-        /// <summary>
         /// Control ContentImagen.
         /// </summary>
         /// <remarks>
@@ -59,22 +50,13 @@ namespace CarritoDeCompras_2012.CS {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentBody;
         
         /// <summary>
-        /// Control adrot.
+        /// Control AdRotator1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder adrot;
-        
-        /// <summary>
-        /// Control SiteMapPath1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapPath SiteMapPath1;
+        protected global::System.Web.UI.WebControls.AdRotator AdRotator1;
         
         /// <summary>
         /// Control SiteMapDataSource1.
@@ -84,14 +66,5 @@ namespace CarritoDeCompras_2012.CS {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource1;
-        
-        /// <summary>
-        /// Control AdRotator1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.AdRotator AdRotator1;
     }
 }
