@@ -61,24 +61,24 @@ namespace CarritoDeCompras_2012.CS
 
             return ListCarrito;
         }
-        
+
 
 
 
         protected void btnComprar_Click(object sender, EventArgs e)
         {
-            
+
             List<CarritoItem> LCCarrito = new List<CarritoItem>();
             CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem[] LCarrito = new CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem[100];
             CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem cI = new CarritoDeCompras_2012.CS.ProxyVentasWS.CarritoItem();
-            
-           
+
+
             LCCarrito = ObtenerCookie();
 
 
             int pos = 0;
 
-            foreach (CarritoItem Item in  LCCarrito)
+            foreach (CarritoItem Item in LCCarrito)
             {
                 cI = lccTolc(Item);
                 LCarrito[pos] = cI;
@@ -89,17 +89,17 @@ namespace CarritoDeCompras_2012.CS
 
             //invocar al webservice
             ProxyVentasWS.VentasWS ws = new ProxyVentasWS.VentasWS();
-            
+
             CarritoDeCompras_2012.CS.ProxyVentasWS.Cliente c = new CarritoDeCompras_2012.CS.ProxyVentasWS.Cliente();
-            
-            c.Nombre = nom.Text; 
+
+            c.Nombre = nom.Text;
             c.Apellido = ape.Text;
             c.Email = mail.Text;
 
 
             //vemos que devuelve
-            string mensaje =ws.AgregarVenta(c, LCarrito)? "Datos Guardados Correctamente": "Error critico: No se guardaron los datos.";
-            
+            string mensaje = ws.AgregarVenta(c, LCarrito) ? "Datos Guardados Correctamente" : "Error critico: No se guardaron los datos.";
+
 
 
             //y lo informamos
@@ -113,12 +113,32 @@ namespace CarritoDeCompras_2012.CS
             //borro
             if (Request.Cookies["CarritoDeCompras"] != null)
             {
-                Request.Cookies["CarritoDeCompras"].Expires = DateTime.Now.AddDays(-1d);
+                //creo de nuevo
+                HttpCookie addCookie = new HttpCookie("CarritoDeCompras");
+                //Request.Cookies["CarritoDeCompras"].Expires = DateTime.Now.AddDays(-1d);
+                addCookie.Expires = DateTime.Now.AddDays(-1d);
+                //veo si con escritura se va
+                Response.Cookies.Add(addCookie);
+
             }
-            //creo de nuevo
-            HttpCookie addCookie = new HttpCookie("CarritoDeCompras");
-            //veo si con escritura se va
-            Response.Cookies.Add(addCookie);
+            
+
+
+
+
+            //habilito y deshabilito
+            btnComprar.Enabled = false;
+            btnFinalizar.Enabled = true;
+
+
+        }
+
+
+
+        protected void btnFinalizar_Click(object sender, EventArgs e)
+        {
+
+            Session["vengodecompras"] = "1";
 
             //habilito y deshabilito
             btnComprar.Enabled = false;
@@ -126,16 +146,6 @@ namespace CarritoDeCompras_2012.CS
 
             
         }
-
-
-
-        protected void btnFinalizar_Click(object sender, EventArgs e)
-        {
-            //lo mando al inicio
-            Response.Redirect("Carrito.aspx"); //para debug x ahora p ver el cookie
-        
-        }
-
 
     }
 }

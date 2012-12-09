@@ -8,6 +8,8 @@ using EntidadesCS;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Web.Caching;
+using System.Web.Hosting;
 
 
 namespace ServicioWebCS
@@ -22,12 +24,28 @@ namespace ServicioWebCS
     // [System.Web.Script.Services.ScriptService]
     public class VentasWS : System.Web.Services.WebService 
     {
-        static SqlConnection conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\App_Data\CompraCarrito.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
+
+
+        //static SqlConnection conexion = crearconexion();
+        
+        private  SqlConnection crearconexion()
+        {
+            string path = HostingEnvironment.ApplicationPhysicalPath.ToString();
+            string bd = "\\App_Data\\CompraCarrito.mdf";
+            string fullpath = path + bd ;
+            string ini = "Data Source=.\\SQLEXPRESS;AttachDbFilename=";
+            string fin = ";Integrated Security=True;Connect Timeout=30;User Instance=True";
+            string conn = ini + fullpath + fin; 
+
+            //SqlConnection conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\App_Data\CompraCarrito.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
+            SqlConnection conexion = new SqlConnection(@conn);
+            return conexion;
+        }
 
 
         private int obtener_id(string tabla)
         {
-
+            
             int id = 0;
             string maxid = "-1";
             string consulta = "";
@@ -35,7 +53,7 @@ namespace ServicioWebCS
 
             consulta = "select max(id)  from " + tabla;
 
-
+            SqlConnection conexion = crearconexion();
             SqlCommand Comando = new SqlCommand(consulta, conexion);
 
 
@@ -86,7 +104,7 @@ namespace ServicioWebCS
 
             bool flaginsercion = true;
             string insercion = "";
-
+            SqlConnection conexion = crearconexion();
             SqlCommand Comando = conexion.CreateCommand();
             
             //insercion = "INSERT  INTO " + tabla + " (" + PrintValues(campos) + ") VALUES (" + PrintValues(valores) + ")";

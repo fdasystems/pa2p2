@@ -36,6 +36,16 @@ namespace CarritoDeCompras_2012.CS
             }
             /* inicializamos el carrito al cargar la pagina */
             Carrito = new HttpCookie("CarritoDeCompras");
+
+            //si vengo de comprar borrar todas las statics...
+            if (Session["vengodecompras"] == "1")
+            {
+                producto_ = "";
+                id_ = "";
+                precio_ = "";
+                cantidad_ = "";
+            }
+
         }
 
 
