@@ -31,7 +31,7 @@ namespace ServicioWebCS
         private  SqlConnection crearconexion()
         {
             string path = HostingEnvironment.ApplicationPhysicalPath.ToString();
-            string bd = "\\App_Data\\CompraCarrito.mdf";
+            string bd = "App_Data\\CompraCarrito.mdf";
             string fullpath = path + bd ;
             string ini = "Data Source=.\\SQLEXPRESS;AttachDbFilename=";
             string fin = ";Integrated Security=True;Connect Timeout=30;User Instance=True";

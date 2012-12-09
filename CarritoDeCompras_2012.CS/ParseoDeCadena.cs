@@ -74,6 +74,78 @@ namespace CarritoDeCompras_2012.CS
 
 
 
+        /// <summary>
+        /// Si es una cadena, solo busca el id
+        /// 5,2,8,2,2,5,5,5,8   
+        /// => 2 -> 3 
+        ///     5 -> 4
+        ///     8 -> 2
+        /// pero si es una lista, deberia:
+        /// ver en el array_cantidad y...
+        /// A) el valor... si es > 1 tomar en cuenta ese, sino contar
+        /// o
+        /// B) solo retornar el valor de posicion en array_cantidad...
+        /// o
+        /// C) tomar el valor (cantidad), y recorrer el resto de la lista 
+        /// a partir de [posicion_actual_del_indice] y sumar (cantidad_encontrada) al 
+        /// valor de (cantidad) pasado .......>>>>>> cantidad=cantidad+cantidad_encontrada
+        /// eX {2,5,8,5}{3,3,2,1}
+        /// /// eX {5,5,8,5}{3,3,2,1}
+        /// /// eX {2,2,2,2}{3,3,2,1}
+        /// </summary>
+        /// <param name="cadena"></param>
+        /// <param name="cantidadDeColumnas"></param>
+        /// <returns></returns>
+
+        public static int[,] DevolverCuantasVecesEnLista(string[] cadena, int cantidadDeColumnas, string[] cantidades)
+        {
+           
+            int veces = 0;
+            int len = cadena.Length;
+            int largo = 0;
+            int cantidadReal = 0;
+            string id="";
+            cantidadReal = CantidadConDatos(cadena);
+            
+                                      //cantidad de filas   //cantidad de columnas
+            int[,] resultado = new int[cantidadReal, cantidadDeColumnas]; //uso este que se adapta mejor...
+
+
+            bool existe = false;
+
+
+            for (int i = 0; i < cantidadReal; i++)
+            {
+                
+                //obtenemos la cantidad asociada al indice analizado
+                id = cadena[i];
+                veces = int.Parse(cantidades[i]);
+                
+                //recorremos el vector a partir del siguiente al indice analizado...
+                for (int j = i+1; j < cantidadReal; j++)
+                    //si el id coincide...
+                    if (id.Equals(cadena[j]))
+                        //y sumamos el valor del vector cantidad asociado al id
+                        veces = veces + int.Parse(cantidades[j]);
+                
+                
+                //En este punto existen el id con la cantidad exacta, debemos guardarlos antes de pasar al siguiente...
+                //PERO TENEMOS QUE CUIDAR LOS QUE YA GUARDAMOS NO REPETIRLOS EN EL RESULTADO
+                //compruebo existencia, si no existe lo agrego
+                existe = Existencia(cadena[i], resultado);
+                largo = cadena[i].Length;
+                if (!existe & largo > 0)
+                {
+                    resultado[i, 0] = int.Parse(cadena[i]);
+                    resultado[i, 1] = veces;
+                }
+
+                //SI YA EXISTE LO OMITO...
+
+
+            }
+            return resultado;
+        }
 
 
         public static int[,] DevolverCuantasVeces(string[] cadena, int cantidadDeColumnas)
@@ -84,7 +156,7 @@ namespace CarritoDeCompras_2012.CS
             int cantidadReal = 0;
             cantidadReal = CantidadConDatos(cadena);
             //int [,] resultado =new int[len,2]; //con esto me agrega uno demas...
-                                      //cantidad de filas   //cantidad de columnas
+            //cantidad de filas   //cantidad de columnas
             int[,] resultado = new int[cantidadReal, cantidadDeColumnas]; //uso este que se adapta mejor...
 
 
@@ -108,11 +180,13 @@ namespace CarritoDeCompras_2012.CS
                     resultado[i, 0] = int.Parse(cadena[i]);
                     resultado[i, 1] = veces;
                 }
+
+                //con la actualizacion 2, si existe deberia agregarle la cantidad...
+
+
             }
             return resultado;
         }
-
-
 
 
 
@@ -153,7 +227,14 @@ namespace CarritoDeCompras_2012.CS
             return dato;
         }
 
-        
+
+
+
+
+
+
+
+
         public CarritoItem GuardarPosicion(int posicion, string valor, string cantidad, string[] array_NombreProducto,string[]  array_Precio){
             CarritoItem cI = new CarritoItem();
 
@@ -194,7 +275,7 @@ namespace CarritoDeCompras_2012.CS
         }
 
 
-        public List<CarritoItem> ParsearCookieYGenerar(string s2)
+        public List<CarritoItem> ParsearCookieYGenerar(string s2, bool lista)
         {
 
             CarritoItem cI = new CarritoItem();
@@ -232,7 +313,12 @@ namespace CarritoDeCompras_2012.CS
 
                 //ahora creo un vector con el par id=cantidadcolumnas
                 int cantidadDeColumnas = 2;
-                int[,] resultado_final = DevolverCuantasVeces(array_id, cantidadDeColumnas);
+                int[,] resultado_final ;
+
+                if (lista)
+                    resultado_final = DevolverCuantasVecesEnLista(array_id, cantidadDeColumnas, array_cantidad);
+                else
+                    resultado_final = DevolverCuantasVeces(array_id, cantidadDeColumnas);
 
                 //valores dentro del array
                 int da = 0;

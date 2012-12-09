@@ -57,18 +57,23 @@
     <Content Include="Carrito.aspx" />
     <Content Include="CatalogoProductos.aspx" />
     <Content Include="Compras.aspx" />
+    <Content Include="errores\Crash.aspx" />
+    <Content Include="errores\Mmm.aspx" />
+    <Content Include="errores\Oops.aspx" />
     <Content Include="Formulario web1.aspx" />
     <Content Include="imgs\calc.jpg" />
     <Content Include="Default.aspx" />
+    <Content Include="imgs\Error_404.jpg" />
+    <Content Include="imgs\error_interno.jpeg" />
     <Content Include="imgs\fincompra.jpg" />
     <Content Include="imgs\home.jpg" />
     <Content Include="imgs\mth.jpg" />
+    <Content Include="imgs\Oops.jpg" />
     <Content Include="Maestra.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Menues_Borrar.aspx" />
     <None Include="Web References\ProxyVentasWS\CarritoItem.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -116,6 +121,27 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="errores\Crash.aspx.cs">
+      <DependentUpon>Crash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="errores\Crash.aspx.designer.cs">
+      <DependentUpon>Crash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="errores\Mmm.aspx.cs">
+      <DependentUpon>Mmm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="errores\Mmm.aspx.designer.cs">
+      <DependentUpon>Mmm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="errores\Oops.aspx.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="errores\Oops.aspx.designer.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulario web1.aspx.cs">
       <DependentUpon>Formulario web1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -130,13 +156,6 @@
     <Compile Include="Maestra.Master.designer.cs">
       <DependentUpon>Maestra.Master</DependentUpon>
     </Compile>
-    <Compile Include="Menues_Borrar.aspx.cs">
-      <DependentUpon>Menues_Borrar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Menues_Borrar.aspx.designer.cs">
-      <DependentUpon>Menues_Borrar.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ParseoDeCadena.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -145,6 +164,9 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TratarCookie.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Web References\ProxyVentasWS\Reference.cs">
       <AutoGen>True</AutoGen>
