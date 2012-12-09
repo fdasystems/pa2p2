@@ -55,5 +55,6 @@
 
         <br />
         <asp:Button ID="btnComprar" runat="server" onclick="btnComprar_Click" Text="Comprar" />
+        <asp:Button ID="btnFinalizar" runat="server" onclick="btnFinalizar_Click" Text="Finalizar" enabled="false" />
     </asp:Content>
 
