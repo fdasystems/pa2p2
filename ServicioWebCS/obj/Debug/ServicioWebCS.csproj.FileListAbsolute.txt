@@ -7,3 +7,12 @@ d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\Servicio
 d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\obj\Debug\ResolveAssemblyReference.cache
 d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\obj\Debug\ServicioWebCS.dll
 d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\obj\Debug\ServicioWebCS.pdb
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\ServicioWebCS\bin\ServicioWebCS.dll
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\ServicioWebCS\bin\ServicioWebCS.pdb
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\ServicioWebCS\bin\CarritoDeCompras_2012.CS.dll
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\ServicioWebCS\bin\EntidadesCS.dll
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\ServicioWebCS\bin\EntidadesCS.pdb
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\ServicioWebCS\bin\CarritoDeCompras_2012.CS.pdb
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\ServicioWebCS\obj\Debug\ResolveAssemblyReference.cache
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\ServicioWebCS\obj\Debug\ServicioWebCS.dll
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\ServicioWebCS\obj\Debug\ServicioWebCS.pdb

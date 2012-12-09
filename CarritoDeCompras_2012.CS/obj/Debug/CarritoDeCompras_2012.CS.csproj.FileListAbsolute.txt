@@ -5,3 +5,10 @@ d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\CarritoD
 d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\CarritoDeCompras_2012.CS\obj\Debug\ResolveAssemblyReference.cache
 d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\CarritoDeCompras_2012.CS\obj\Debug\CarritoDeCompras_2012.CS.dll
 d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\CarritoDeCompras_2012.CS\obj\Debug\CarritoDeCompras_2012.CS.pdb
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\CarritoDeCompras_2012.CS\bin\CarritoDeCompras_2012.CS.dll
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\CarritoDeCompras_2012.CS\bin\CarritoDeCompras_2012.CS.pdb
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\CarritoDeCompras_2012.CS\bin\EntidadesCS.dll
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\CarritoDeCompras_2012.CS\bin\EntidadesCS.pdb
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\CarritoDeCompras_2012.CS\obj\Debug\ResolveAssemblyReference.cache
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\CarritoDeCompras_2012.CS\obj\Debug\CarritoDeCompras_2012.CS.dll
+D:\Users\LORE\Desktop\FDA\FACU\tssi\2012\pa2p2\CarritoDeCompras_2012.CS\obj\Debug\CarritoDeCompras_2012.CS.pdb

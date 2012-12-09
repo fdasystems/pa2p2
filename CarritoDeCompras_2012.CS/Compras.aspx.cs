@@ -140,13 +140,12 @@ namespace CarritoDeCompras_2012.CS
 
             Session["vengodecompras"] = "1";
 
-            //lo mando al inicio
-            Response.Redirect("Carrito.aspx"); //para debug x ahora p ver el cookie
+            //habilito y deshabilito
+            btnComprar.Enabled = false;
+            btnFinalizar.Enabled = true;
 
+            
         }
-
-
-
 
     }
 }
