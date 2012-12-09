@@ -26,7 +26,7 @@ namespace ServicioWebCS
     {
 
 
-        //static SqlConnection conexion = crearconexion();
+        
         
         private  SqlConnection crearconexion()
         {
@@ -35,8 +35,15 @@ namespace ServicioWebCS
             string fullpath = path + bd ;
             string ini = "Data Source=.\\SQLEXPRESS;AttachDbFilename=";
             string fin = ";Integrated Security=True;Connect Timeout=30;User Instance=True";
-            string conn = ini + fullpath + fin; 
+            string conn = "";
+            //conexion pc
+            //conn = ini + fullpath + fin;
 
+            //conexion notebook
+            conn = "Data Source=ALEX\\SQLEXPRESS;MultipleActiveResultSets=True;Initial Catalog=CompraCarritoFDA;Integrated Security=True";
+            
+            
+            //ejemplo de conexion pc
             //SqlConnection conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=d:\Users\LORE\Desktop\FDA\FACU\tssi\2012\programacion avanzada II\pa2p2\ServicioWebCS\App_Data\CompraCarrito.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
             SqlConnection conexion = new SqlConnection(@conn);
             return conexion;
